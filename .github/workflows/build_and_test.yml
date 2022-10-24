@@ -1,0 +1,25 @@
+on: [push, pull_request]
+name: Build and Test check
+jobs:
+  builds:
+    name: Build checks
+    runs-on: ubuntu-latest
+    strategy:
+      matrix: { dir: ["blink", "display_i2c"] }
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          target: thumbv6m-none-eabi
+          override: true
+          profile: minimal
+      - name: Install flip-link
+        run: cargo install flip-link --locked
+        working-directory: ${{ matrix.dir }}
+      - name: Build sub-projects
+        run: cargo build --release
+        working-directory: ${{ matrix.dir }}
+      - name: Clean
+        run: cargo clean
+        working-directory: ${{ matrix.dir }}

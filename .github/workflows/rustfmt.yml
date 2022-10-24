@@ -1,0 +1,20 @@
+on: [push, pull_request]
+name: Code formatting check
+jobs:
+  fmt:
+    name: Rustfmt
+    runs-on: ubuntu-latest
+    strategy:
+      matrix: { dir: ['blink', 'display_i2c'] }
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          target: thumbv6m-none-eabi
+          override: true
+          profile: minimal
+          components: rustfmt
+      - name: check formatting
+        run: cargo fmt --check
+        working-directory: ${{ matrix.dir }}
