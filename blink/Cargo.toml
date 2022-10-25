@@ -1,0 +1,48 @@
+[package]
+authors = ["Gamunu Balagalle <gamunu@fastcode.io>"]
+name = "blink"
+version = "0.1.0"
+edition = "2021"
+readme = "README.md"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+rp-pico = "0.5"
+cortex-m = "0.7"
+cortex-m-rt = "0.7"
+embedded-time = "0.12"
+panic-probe = { version = "0.3", features = ["print-defmt"] }
+rp2040-hal = { version="0.6", features=["rt"] }
+rp2040-boot2 = "0.2"
+defmt = "0.3"
+defmt-rtt = "0.4"
+embedded-hal ="0.2"
+panic-halt = "0.2"
+
+# this lets you use `cargo fix`!
+[[bin]]
+name = "blink"
+test = false
+bench = false
+
+[profile.release]
+codegen-units = 1
+debug = false
+debug-assertions = false
+overflow-checks = false
+panic = 'abort'
+lto = true
+opt-level = "z"
+incremental = false
+strip = true
+
+[profile.dev]
+opt-level = 0
+debug = 2
+debug-assertions = true
+overflow-checks = true
+lto = false
+panic = 'unwind'
+incremental = true
+codegen-units = 256

@@ -1,0 +1,2 @@
+cargo:rustc-link-search=/Users/gamunu/work/raspberry-pi-pico-rs/blink/target/thumbv6m-none-eabi/debug/build/defmt-02f91ebac74ca518/out
+cargo:rustc-cfg=no_cas
