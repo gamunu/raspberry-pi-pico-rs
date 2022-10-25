@@ -28,8 +28,8 @@ $ cargo install elf2uf2-rs
 After the tool is installed, you can use the tool after a build of your project to produce a.uf2 file.
 
 ```bash
-$ cargo build -release
-$ elf2uf2-rs target/thumbv6m-none-eabi/release/app
+$ cargo build --release
+$ elf2uf2-rs target/thumbv6m-none-eabi/release/blink
 ```
 
 If you want to automatically run elf2uf2 when you type cargo run or cargo build - in the .cargo/config.toml, you need to
@@ -44,8 +44,8 @@ And for further automation, if you want to automatically flash your Pico board w
 transfer mode, connect it to the usb, and add the -d option like so:
 
 ```bash
-$ cargo build -release
-$ elf2uf2-rs -d target/thumbv6m-none-eabi/release/app
+$ cargo build --release
+$ elf2uf2-rs -d target/thumbv6m-none-eabi/release/blink
 ```
 
 ## Two Pico Board Setup
