@@ -9,7 +9,7 @@ $ rustup component add llvm-tools-preview
 ```
 
 Install flip-link to ensure memory safety. `flip-link` implements stack overflow solution. Linking your program with
-flip-link produces the flipped memory layout, which is memory safe in presence of stack overflows.
+flip-link produces the flipped memory layout, which is memory-safe in presence of stack overflows.
 
 ```bash
 $ cargo install flip-link
@@ -50,13 +50,13 @@ $ elf2uf2-rs -d target/thumbv6m-none-eabi/release/blink
 
 ## Two Pico Board Setup
 
-If you haven’t setup your board for debugging yet, you can start
+If you haven’t set up your board for debugging yet, you can start
 here: https://www.raspberrypi.com/documentation/microcontrollers/raspberry-pi-pico.html#debugging-using-another-raspberry-pi-pico
 
 Make sure to download the picoprobe UF2 file from the link above and flash one of the Picos with this file. This will
 become your debug Pico.
 
-Also, see Apendix A of https://datasheets.raspberrypi.com/pico/getting-started-with-pico.pdf for a diagram of how to
+Also, see Appendix A of https://datasheets.raspberrypi.com/pico/getting-started-with-pico.pdf for a diagram of how to
 wire your two Picos together for debugging. This is where you will be using the breadboard and wires.
 
 With a picoprobe debugger, we can use the Rust default output format binary (.ELF). To flash the.elf file onto the Pico,
@@ -66,7 +66,7 @@ Let’s install OpenoCD
 
 If you have used the C/C++ Pico SDK, you probably already have this installed. You can skip this section if you do.
 
-For MacOS:
+For macOS:
 
 ```bash
 $ brew install open-ocd
@@ -83,7 +83,7 @@ Let’s Install GDB
 
 If you have used the C/C++ Pico SDK, you probably already have this installed. You can skip this section if you do.
 
-For MacOS:
+For macOS:
 
 ```bash
 $ brew tap ArmMbed/homebrew-formulae
