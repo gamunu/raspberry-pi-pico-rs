@@ -5,7 +5,7 @@ Run the following commands to get your rust environment setup:
 ```bash
 $ rustup target add thumbv6m-none-eabi
 $ cargo install cargo-binutils
-$ rustup component add llvm-tools-
+$ rustup component add llvm-tools-preview
 ```
 
 Install flip-link to ensure memory safety. `flip-link` implements stack overflow solution. Linking your program with

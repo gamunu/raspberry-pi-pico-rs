@@ -5,7 +5,7 @@ Run the following commands to get your rust environment setup:
 ```bash
 $ rustup target add thumbv6m-none-eabi
 $ cargo install cargo-binutils
-$ rustup component add llvm-tools-
+$ rustup component add llvm-tools-preview
 ```
 
 Install flip-link to ensure memory safety. `flip-link` implements stack overflow solution. Linking your program with
@@ -46,52 +46,4 @@ transfer mode, connect it to the usb, and add the -d option like so:
 ```bash
 $ cargo build --release
 $ elf2uf2-rs -d target/thumbv6m-none-eabi/release/display_i2c
-```
-
-## Two Pico Board Setup
-
-If you haven’t setup your board for debugging yet, you can start
-here: https://www.raspberrypi.com/documentation/microcontrollers/raspberry-pi-pico.html#debugging-using-another-raspberry-pi-pico
-
-Make sure to download the picoprobe UF2 file from the link above and flash one of the Picos with this file. This will
-become your debug Pico.
-
-Also, see Apendix A of https://datasheets.raspberrypi.com/pico/getting-started-with-pico.pdf for a diagram of how to
-wire your two Picos together for debugging. This is where you will be using the breadboard and wires.
-
-With a picoprobe debugger, we can use the Rust default output format binary (.ELF). To flash the.elf file onto the Pico,
-we will use OpenoCD.
-
-Let’s install OpenoCD
-
-If you have used the C/C++ Pico SDK, you probably already have this installed. You can skip this section if you do.
-
-For MacOS:
-
-```bash
-$ brew install open-ocd
-```
-
-For Ubuntu:
-
-```bash
-$ sudo apt update
-$ sudo apt -y install openocd
-```
-
-Let’s Install GDB
-
-If you have used the C/C++ Pico SDK, you probably already have this installed. You can skip this section if you do.
-
-For MacOS:
-
-```bash
-$ brew tap ArmMbed/homebrew-formulae
-$ brew install arm-none-eabi-gcc
-```
-
-For Ubuntu:
-
-```bash
-$ sudo apt install git gdb-multiarch
 ```
