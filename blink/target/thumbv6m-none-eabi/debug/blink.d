@@ -1,1 +1,0 @@
-/Users/gamunu/work/raspberry-pi-pico-rs/blink/target/thumbv6m-none-eabi/debug/blink: /Users/gamunu/work/raspberry-pi-pico-rs/blink/build.rs /Users/gamunu/work/raspberry-pi-pico-rs/blink/memory.x /Users/gamunu/work/raspberry-pi-pico-rs/blink/src/main.rs

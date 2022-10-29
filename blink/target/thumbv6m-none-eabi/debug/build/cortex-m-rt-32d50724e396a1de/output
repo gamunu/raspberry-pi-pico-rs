@@ -1,7 +1,0 @@
-cargo:rustc-link-lib=static=cortex-m-rt
-cargo:rerun-if-changed=bin/thumbv6m-none-eabi.a
-cargo:rustc-cfg=cortex_m
-cargo:rustc-cfg=armv6m
-cargo:rustc-link-search=/Users/gamunu/work/raspberry-pi-pico-rs/blink/target/thumbv6m-none-eabi/debug/build/cortex-m-rt-32d50724e396a1de/out
-cargo:rerun-if-changed=build.rs
-cargo:rerun-if-changed=link.x.in

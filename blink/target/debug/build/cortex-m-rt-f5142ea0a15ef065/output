@@ -1,3 +1,0 @@
-cargo:rustc-link-search=/Users/gamunu/work/raspberry-pi-pico-rs/blink/target/debug/build/cortex-m-rt-f5142ea0a15ef065/out
-cargo:rerun-if-changed=build.rs
-cargo:rerun-if-changed=link.x.in

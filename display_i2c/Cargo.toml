@@ -1,0 +1,47 @@
+[package]
+authors = ["Gamunu Balagalle <gamunu@fastcode.io>"]
+name = "display_i2c"
+version = "0.1.0"
+edition = "2021"
+readme = "README.md"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+rp-pico = "0.5"
+cortex-m-rt = "0.7"
+panic-halt = "0.2"
+panic-probe = { version = "0.3", features = ["print-defmt"] }
+defmt-rtt = "0.4"
+ssd1306 = "0.7"
+embedded-graphics = "0.7"
+embedded-hal ="0.2"
+fugit = "0.3"
+nb = "1.0"
+
+# this lets you use `cargo fix`!
+[[bin]]
+name = "display_i2c"
+test = false
+bench = false
+
+[profile.release]
+codegen-units = 1
+debug = false
+debug-assertions = false
+overflow-checks = false
+panic = 'abort'
+lto = true
+opt-level = "z"
+incremental = false
+strip = true
+
+[profile.dev]
+opt-level = 0
+debug = 2
+debug-assertions = true
+overflow-checks = true
+lto = false
+panic = 'unwind'
+incremental = true
+codegen-units = 256
