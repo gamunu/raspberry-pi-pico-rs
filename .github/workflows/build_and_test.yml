@@ -1,0 +1,38 @@
+on: [push, pull_request]
+name: Build and Test check
+jobs:
+  builds:
+    name: Build checks
+    runs-on: ubuntu-latest
+    strategy:
+      matrix: { dir: ["blink", "display_i2c"] }
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          target: thumbv6m-none-eabi
+          override: true
+          profile: minimal
+      - name: Build sub-projects
+        uses: actions-rs/cargo@v1
+        with:
+          command: build
+          args: --release
+          working-directory: ${{ matrix.dir }}
+      - name: Clean
+        uses: actions-rs/cargo@v1
+        with:
+          command: clean
+          working-directory: ${{ matrix.dir }}
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: nightly
+          target: thumbv6m-none-eabi
+          override: true
+          profile: minimal
+      - name: Check unused deps
+        uses: aig787/cargo-udeps-action@v1
+        with:
+          version: latest
+          working-directory: ${{ matrix.dir }}
