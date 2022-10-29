@@ -4,7 +4,7 @@ jobs:
   clippy_check:
     runs-on: ubuntu-latest
     strategy:
-      matrix: { dir: ['blink', 'display_i2c'] }
+      matrix: { dir: ["blink", "display_i2c"] }
     env:
       RUSTFLAGS: "-D warnings"
     steps:
@@ -16,8 +16,5 @@ jobs:
           override: true
           profile: minimal
           components: clippy
-      - uses: actions-rs/cargo@v1
-        with:
-          command: clippy
-          args: -- -Dwarnings
-          working-directory: ${{ matrix.dir }}
+      - run: cargo clippy -- -Dwarnings
+        working-directory: ${{ matrix.dir }}

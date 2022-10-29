@@ -15,16 +15,11 @@ jobs:
           override: true
           profile: minimal
       - name: Build sub-projects
-        uses: actions-rs/cargo@v1
-        with:
-          command: build
-          args: --release
-          working-directory: ${{ matrix.dir }}
+        run: cargo build --release
+        working-directory: ${{ matrix.dir }}
       - name: Clean
-        uses: actions-rs/cargo@v1
-        with:
-          command: clean
-          working-directory: ${{ matrix.dir }}
+        run: cargo clean
+        working-directory: ${{ matrix.dir }}
       - uses: actions-rs/toolchain@v1
         with:
           toolchain: nightly
