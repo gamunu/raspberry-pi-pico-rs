@@ -14,20 +14,12 @@ jobs:
           target: thumbv6m-none-eabi
           override: true
           profile: minimal
+      - name: Install flip-link
+        run: cargo install flip-link --locked
+        working-directory: ${{ matrix.dir }}
       - name: Build sub-projects
         run: cargo build --release
         working-directory: ${{ matrix.dir }}
       - name: Clean
         run: cargo clean
         working-directory: ${{ matrix.dir }}
-      - uses: actions-rs/toolchain@v1
-        with:
-          toolchain: nightly
-          target: thumbv6m-none-eabi
-          override: true
-          profile: minimal
-      - name: Check unused deps
-        uses: aig787/cargo-udeps-action@v1
-        with:
-          version: latest
-          working-directory: ${{ matrix.dir }}
