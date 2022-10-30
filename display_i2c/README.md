@@ -12,7 +12,7 @@ Install flip-link to ensure memory safety. `flip-link` implements stack overflow
 flip-link produces the flipped memory layout, which is memory safe in presence of stack overflows.
 
 ```bash
-$ cargo install flip-link
+$ cargo install flip-link --locked
 ```
 
 ## One Pico Board Setup
@@ -22,7 +22,7 @@ into the.UF2 binary format. You can do this with a tool called elf2uf2. In your 
 project’s directory:
 
 ```bash
-$ cargo install elf2uf2-rs
+$ cargo install elf2uf2-rs --locked
 ```
 
 After the tool is installed, you can use the tool after a build of your project to produce a.uf2 file.
