@@ -29,7 +29,7 @@ After the tool is installed, you can use the tool after a build of your project 
 
 ```bash
 $ cargo build --release
-$ elf2uf2-rs target/thumbv6m-none-eabi/release/blink
+$ elf2uf2-rs target/thumbv6m-none-eabi/release/graphics_i2c
 ```
 
 If you want to automatically run elf2uf2 when you type cargo run or cargo build - in the .cargo/config.toml, you need to
@@ -45,5 +45,5 @@ transfer mode, connect it to the usb, and add the -d option like so:
 
 ```bash
 $ cargo build --release
-$ elf2uf2-rs -d target/thumbv6m-none-eabi/release/blink
+$ elf2uf2-rs -d target/thumbv6m-none-eabi/release/graphics_i2c
 ```

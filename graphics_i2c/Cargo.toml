@@ -1,6 +1,6 @@
 [package]
 authors = ["Gamunu Balagalle <gamunu@fastcode.io>"]
-name = "blink"
+name = "graphics_i2c"
 version = "1.0.0"
 edition = "2021"
 readme = "README.md"
@@ -9,20 +9,19 @@ readme = "README.md"
 
 [dependencies]
 rp-pico = "0.5"
-cortex-m = "0.7"
 cortex-m-rt = "0.7"
-embedded-time = "0.12"
-panic-probe = { version = "0.3", features = ["print-defmt"] }
-rp2040-hal = { version="0.6", features=["rt"] }
-rp2040-boot2 = "0.2"
-defmt = "0.3"
-defmt-rtt = "0.4"
-embedded-hal ="0.2"
 panic-halt = "0.2"
+panic-probe = { version = "0.3", features = ["print-defmt"] }
+defmt-rtt = "0.4"
+ssd1306 = "0.7"
+embedded-graphics = "0.7"
+embedded-hal ="0.2"
+fugit = "0.3"
+tinytga = "0.4"
 
 # this lets you use `cargo fix`!
 [[bin]]
-name = "blink"
+name = "graphics_i2c"
 test = false
 bench = false
 
