@@ -7,7 +7,7 @@ jobs:
     strategy:
       matrix: { dir: ['blink', 'display_i2c'] }
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: actions-rs/toolchain@v1
         with:
           toolchain: stable
