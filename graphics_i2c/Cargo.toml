@@ -15,7 +15,7 @@ panic-probe = { version = "0.3", features = ["print-defmt"] }
 defmt-rtt = "0.4"
 ssd1306 = "0.7"
 embedded-graphics = "0.8"
-embedded-hal ="0.2"
+embedded-hal ="1.0"
 fugit = "0.3"
 tinytga = "0.4"
 
