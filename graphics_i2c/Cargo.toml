@@ -17,7 +17,7 @@ ssd1306 = "0.7"
 embedded-graphics = "0.8"
 embedded-hal ="0.2"
 fugit = "0.3"
-tinytga = "0.4"
+tinytga = "0.5"
 
 # this lets you use `cargo fix`!
 [[bin]]
