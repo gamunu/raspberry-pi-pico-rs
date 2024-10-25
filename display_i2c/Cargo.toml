@@ -10,7 +10,7 @@ readme = "README.md"
 [dependencies]
 rp-pico = "0.9"
 cortex-m-rt = "0.7"
-panic-halt = "0.2"
+panic-halt = "1.0"
 panic-probe = { version = "0.3", features = ["print-defmt"] }
 defmt-rtt = "0.4"
 ssd1306 = "0.7"

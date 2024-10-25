@@ -18,7 +18,7 @@ rp2040-boot2 = "0.3"
 defmt = "0.3"
 defmt-rtt = "0.4"
 embedded-hal ="0.2"
-panic-halt = "0.2"
+panic-halt = "1.0"
 
 # this lets you use `cargo fix`!
 [[bin]]
