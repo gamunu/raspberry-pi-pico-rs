@@ -12,7 +12,7 @@ rp-pico = "0.9"
 cortex-m-rt = "0.7"
 panic-halt = "0.2"
 panic-probe = { version = "0.3", features = ["print-defmt"] }
-defmt-rtt = "0.4"
+defmt-rtt = "1.0"
 ssd1306 = "0.7"
 embedded-graphics = "0.8"
 embedded-hal ="0.2"
