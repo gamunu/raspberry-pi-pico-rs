@@ -16,7 +16,7 @@ defmt-rtt = "0.4"
 ssd1306 = "0.7"
 embedded-graphics = "0.8"
 embedded-hal ="0.2"
-fugit = "0.3"
+fugit = "0.6"
 nb = "1.1"
 
 # this lets you use `cargo fix`!
